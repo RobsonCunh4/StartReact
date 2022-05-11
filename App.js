@@ -1,19 +1,32 @@
-import React, {useState, useEffect} from 'react';
-import {css} from './assets/css/Css';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './views/Home';
+import { Home, Login, Rastreio } from './views';
 
-export default function App(){
-  const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
+export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "EMpresa",
+            headerStyle: {backgroundColor: '#01c9bf'},
+            headerTintColor: '#333',
+            headerTitleStyle: { fontWeight: 'bold', alignSelf: 'center' }
+          }}
+        />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Rastreio" component={Rastreio} />
+        {/* <Stack.Screen name="AreaRestrita" component={AreaRestrita} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+
 
 
