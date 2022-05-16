@@ -14,12 +14,12 @@ export default function App() {
           component={Home}
           options={{
             title: "EMpresa",
-            headerStyle: {backgroundColor: '#01c9bf'},
+            headerStyle: { backgroundColor: '#00D2FF' },
             headerTintColor: '#333',
             headerTitleStyle: { fontWeight: 'bold', alignSelf: 'center' }
           }}
         />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" options={{ headerShown: false }} component={Login} />
         <Stack.Screen name="Rastreio" component={Rastreio} />
         {/* <Stack.Screen name="AreaRestrita" component={AreaRestrita} /> */}
       </Stack.Navigator>
